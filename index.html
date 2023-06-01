@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login hidden">
+        <svg class="login__icon close">
+            <use xlink:href="img/sprite.svg#icon-cross"></use>
+        </svg>
+        <form action="#" class="login form">
+            <input class="login__form__item username" type="text" placeholder="Логін" required maxlength="8">
+            <input class="login__form__item password" type="password" placeholder="Пароль" required maxlength="8">
+            <button class="login__form__btn login__form__item submit">
+                Увійти
+            </button>
+        </form>
+    </div>
+
+
+    <section class="main">
+        <nav class="nav">
+            <div class="nav__logo">ticketsGo</div>
+            <ul class="nav__bar">
+                <li class="nav__bar__item"> 
+                    <svg class="nav__bar__icon user">
+                    <use xlink:href="img/sprite.svg#icon-user"></use>
+                    </svg>
+                </li>    
+                <li class="nav__bar__menu">
+                    <svg class="nav__bar__icon menu hidden">
+                        <use xlink:href="img/sprite.svg#icon-menu"></use>
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+        
+
+        <container class="admin-panel hidden">
+            <h1 class="main__header"> Додати квиток</h1>
+            <form action="#" class="add">
+                <input type="text" class="add__item add-type" placeholder="Тип" required>
+                <input type="text" class="add__item add-from" placeholder="Звідки" required>
+                <input type="text" class="add__item add-to" placeholder="Куди" required>
+                <input type="text" class="add__item add-date" placeholder="Дата" required>
+
+                <input type="text" class="add__item add-departure" placeholder="Відбуття" required>
+                <input type="text" class="add__item add-arrival" placeholder="Прибуття" required>
+                <input type="text" class="add__item add-time" placeholder="Час в дорозі" required>
+                <input type="text" class="add__item add-price" placeholder="Ціна" required>
+                <input type="number" class="add__item add-seat" placeholder="К-сть місць" required>
+                
+                <button class="add__btn">Додати</button>
+            </form>
+
+            <h1 class="main__header"> Куплені квитки</h1>
+            <div class="bought">
+            </div>
+
+            <h1 class="main__header">Перелік рейсів</h1>
+            <div class="all">
+                <!-- <div class="tickets__ticket">
+                    <div class="tickets__ticket__time">
+                        <span class="tickets__ticket__departure">02:59</span>
+                        <span class="time">8.52</span>
+                        <span class="arrival">11:51</span>
+                    </div>
+                    <div class="tickets__ticket__place">
+                        <span class="tickets__ticket__from">Львів</span>            
+                       <span class="to">Тернопіль</span>
+                    </div>
+                    <div class="tickets__ticket__details">
+                        <div class="tickets__ticket__dates">Дати:  23,24,25</div>
+
+                        <div class="tickets__ticket__type">Тип: </div>   
+                    </div> -->
+                </div>
+            </div>
+        </container>
+
+
+
+        <container class="user-panel hidden">
+            <h1 class="main__header">Купити залізничні квитки онлайн
+            </h1>
+            <div class="box">
+                    <div class="form">
+                        <input type="text" class="form__item form__item--1 from" placeholder="Звідки" required>
+                        <input type="text" class="form__item form__item--2 to" placeholder="Куди" required>
+                        <input type="text" class="form__item form__item--3 there" placeholder="Туди" required>
+                        <input type="text" class="form__item form__item--4 back" placeholder="Назад" required>
+                    </div>
+                    <button class="form__btn search">Знайти</button>
+            </div>
+
+            <div class="tickets">
+                <!-- <div class="tickets__ticket">
+                    <div class="tickets__ticket__time">
+                        <span class="tickets__ticket__departure">02:59</span>
+                        <span class="time">8.52</span>
+                        <span class="arrival">11:51</span>
+                    </div>
+                    <div class="tickets__ticket__place">
+                        <span class="tickets__ticket__from">Львів</span>
+                        <span class="to">Тернопіль</span>
+                    </div>
+                    <div class="buy">
+                        <div class="tickets__ticket__price">
+                            Ціна: 200
+                        </div>
+                    </div>
+                </div> -->
+            <div class="tickets__not-found hidden">Квитків не знайдено!</div>
+            </div>
+
+            <div class="payment hidden">
+                <div class="payment__det">
+                    <div class="payment__det__price ticket-price">
+                        Ціна:
+                    </div>
+                    <div class="input">
+                        <input class="payment__det__seats num-seats" min="0" type="number" placeholder="К-сть місць">
+                        <button class="payment__det__btn btn-seats">Вказати</button>
+                    </div>
+                </div>
+                <form action="#" class="payment__details">
+                    <input class="payment__details__item full-name"  type="text" required placeholder="Повне ім'я" >
+                    <input class="payment__details__item card-number"  type="number" required placeholder="Номер карти" maxlength="14">
+                    <input class="payment__details__item code" type="text" required placeholder="CVV" maxlength="4">
+                    <input class="payment__details__item date" type="date"  required placeholder="Срок" required>
+                    <button class="payment__details__btn finish">Сплатити</button>
+                </form>
+            </div>
+        </container>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
